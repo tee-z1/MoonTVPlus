@@ -14,7 +14,7 @@
  * 3. 运行：node scripts/init-turso.js
  */
 
-const { createClient } = require('@libsql/client');
+const { createClient } = require('@libsql/client/http');
 const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');

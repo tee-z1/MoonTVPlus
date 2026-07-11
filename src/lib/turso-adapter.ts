@@ -18,9 +18,12 @@ import { DatabaseAdapter, D1PreparedStatement, D1Result } from './d1-adapter';
  *
  * 使用 require 而非 import，避免 webpack 在 EdgeOne 构建中
  * 因条件导出 (edge-light) 错误解析 ESM 模块
+ *
+ * 使用 @libsql/client/http 子路径而非主入口，避免拉入原生 libsql
+ * 模块和 isomorphic-ws/isomorphic-fetch 等不兼容边缘环境的依赖
  */
 function getLibsqlClient(): any {
-  const mod = require('@libsql/client');
+  const mod = require('@libsql/client/http');
   return mod.createClient || mod.default?.createClient;
 }
 

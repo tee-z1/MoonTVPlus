@@ -104,6 +104,9 @@ const createNextConfig = (phase) => {
             'redis',
             '@vercel/postgres',
             'pg',
+            'libsql',
+            '@libsql/isomorphic-fetch',
+            '@libsql/isomorphic-ws',
           ].map((pkg) => [
             pkg,
             path.resolve(
